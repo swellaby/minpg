@@ -1,0 +1,44 @@
+{
+  "name": "simple-pg-ui",
+  "version": "0.0.1",
+  "description": "A simple postgres UI",
+  "main": "src/main.js",
+  "repository": {},
+  "author": {
+    "url": "https://blog.baileyeverts.com",
+    "name": "beverts312",
+    "email": "texas312@gmail.com"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "electron .",
+    "lint": "tslint -c tslint.json ./**/*.ts",
+    "transpile": "tsc"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "^4.4.5",
+    "@angular/compiler": "^4.4.5",
+    "@angular/core": "^4.4.5",
+    "@angular/forms": "^4.4.5",
+    "@angular/http": "^4.4.5",
+    "@angular/platform-browser": "^4.4.5",
+    "@angular/platform-browser-dynamic": "^4.4.4",
+    "@angular/router": "^4.4.5",
+    "core-js": "^2.5.1",
+    "electron": "^1.7.9",
+    "electron-debug": "^1.4.0",
+    "pg": "^7.3.0",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.4.3",
+    "zone.js": "^0.8.18"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.34",
+    "@types/pg": "^7.1.4",
+    "devtron": "^1.4.0",
+    "tslint": "^5.7.0",
+    "tslint-microsoft-contrib": "^5.0.1",
+    "typescript": "^2.5.3"
+  }
+}

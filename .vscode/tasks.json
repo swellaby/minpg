@@ -1,0 +1,33 @@
+{
+    "version": "0.1.0",
+    "isShellCommand": true,
+    "showOutput": "silent",
+    "tasks": [
+        {
+            "taskName": "package install",
+            "suppressTaskName": true,
+            "args": [
+                "npm",
+                "install"
+            ]
+        },
+        {
+            "taskName": "lint",
+            "args": [
+                "npm",
+                "run",
+                "lint"
+            ],
+            "problemMatcher": "$tsc"
+        },
+        {
+            "taskName": "test",
+            "args": [
+                "npm",
+                "run",
+                "test"
+            ],
+            "problemMatcher": "$tsc"
+        }
+    ]
+}
