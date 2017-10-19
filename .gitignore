@@ -2,6 +2,7 @@
 /node_modules/
 .ntvs_analysis.dat*
 npm-debug*
+package-lock.json
 
 # Istanbul
 **/coverage/
@@ -11,8 +12,7 @@ coverage
 /.idea/
 /.settings
 
-# Typescript - You really shouldn't be using Typings anymore, but just in case
-/typings
+# Typescript
 tsd-debug.log
 
 # Generated Javascript

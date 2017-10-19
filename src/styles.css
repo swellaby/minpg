@@ -1,0 +1,6 @@
+ngb-modal-window {
+    top: 15%;
+    left: 30%;
+    position: absolute;
+    z-index: 1041;
+}

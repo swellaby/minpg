@@ -1,5 +1,4 @@
-// tslint:disable:no-suspicious-comment
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { PostgresClient } from '../../../../services/pg-client';
 
@@ -7,13 +6,6 @@ import { PostgresClient } from '../../../../services/pg-client';
   selector: 'pg-table-list',
   templateUrl: 'ui/components/left-sidebar/table-list/table-list.html'
 })
-export class TableList implements OnInit  {
-    public pgUtils: PostgresClient; // TODO: INSTANTIATE THIS
+export class TableList {
     public tables: String[];
-
-    public ngOnInit() {
-        this.pgUtils.getAllTableNames().then((names) => {
-            this.tables = names;
-        });
-    }
 }
