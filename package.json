@@ -1,5 +1,5 @@
 {
-  "name": "simple-pg-ui",
+  "name": "minpg",
   "version": "0.0.1",
   "description": "A simple postgres UI",
   "main": "src/main.js",

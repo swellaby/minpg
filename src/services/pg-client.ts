@@ -2,7 +2,7 @@ import * as pg from 'pg';
 
 import * as queries from '../constants/queries';
 
-export class PostgresUtils {
+export class PostgresClient {
     private pool: pg.Pool;
 
     constructor(config: pg.PoolConfig) {
