@@ -36,7 +36,6 @@ export class ServerSelection  {
       if (!this.servers.length) {
         this.openModal();
       }
-      console.log(this.servers);
     }
 
     private openModal() {

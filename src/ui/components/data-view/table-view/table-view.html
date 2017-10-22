@@ -1,1 +1,16 @@
-Coming soon
+<table class="table" *ngIf="data">
+    <thead>
+        <tr>
+            <th *ngFor="let field of data.fields;">
+                {{ field.name }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of data.rows;">
+            <td *ngFor="let field of data.fields;">
+                {{ row[field.name]}}
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -30,12 +30,6 @@ export class PostgresClient {
         return this.pool.query(format(queries.getTable, table));
     }
 
-    public getAllDatabaseNames(): void {
-        this.pool.query(queries.getAllDatabaseNames).then((results) => {
-            console.log(results);
-        });
-    }
-
     private transformConfig(config: ServerConfig): pg.PoolConfig {
         return {
             host: config.host,

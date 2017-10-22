@@ -52,7 +52,6 @@ export class TableList implements OnInit {
       });
       this.message = noTablesMessage;
       this.ref.detectChanges();
-      this.pgClient.getAllDatabaseNames();
     }).catch((err) => {
       this.message = err;
     });

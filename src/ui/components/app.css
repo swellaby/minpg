@@ -8,6 +8,7 @@ data-view {
     background-color: #1e1e1e;
     color: #c5c8c6;
     width: 75%;
+    overflow: scroll;
 }
 
 .body-container {

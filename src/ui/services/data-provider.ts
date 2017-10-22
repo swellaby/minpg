@@ -13,8 +13,7 @@ export class DataProviderService {
   public currentTableTitle: Observable<String> = this.tableTitleSource.asObservable();
 
   public updateData(title: String, data: QueryResult) {
-    console.log(data);
-    this.tableDataSource.next(data);
     this.tableTitleSource.next(title);
+    this.tableDataSource.next(data);
   }
 }
