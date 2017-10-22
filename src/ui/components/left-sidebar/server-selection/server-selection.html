@@ -1,7 +1,8 @@
-
-<select [(ngModel)]="selectedServer" (ngModelChange)="onChange($event)">
-    <option [ngValue]="addNew">--- Add New ---</option>    
-    <option *ngFor="let server of servers;" [ngValue]="server.name">
-        {{server.name}}
-    </option>
-</select>
+<div class="server-container">
+    <select [(ngModel)]="selectedServer" (ngModelChange)="onChange($event)">
+        <option [ngValue]="addNew">--- Add New ---</option>
+        <option *ngFor="let server of servers;" [ngValue]="server">
+            {{server.name}}
+        </option>
+    </select>
+</div>

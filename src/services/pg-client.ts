@@ -1,12 +1,13 @@
 import * as pg from 'pg';
 
 import * as queries from '../constants/queries';
+import { ServerConfig } from '../models/server-config';
 
 export class PostgresClient {
     private pool: pg.Pool;
 
-    constructor(config: pg.PoolConfig) {
-        this.pool = new pg.Pool(config);
+    constructor(config: ServerConfig) {
+        this.pool = new pg.Pool(this.transformConfig(config));
     }
 
     public getAllTableNames(): Promise<String[]> {
@@ -19,5 +20,15 @@ export class PostgresClient {
                 reject(err);
             });
         });
+    }
+
+    private transformConfig(config: ServerConfig): pg.PoolConfig {
+        return {
+            host: config.host,
+            port: config.port,
+            user: config.user,
+            password: config.password,
+            database: config.database
+        };
     }
 }

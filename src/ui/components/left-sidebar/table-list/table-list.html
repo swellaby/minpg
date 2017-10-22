@@ -1,3 +1,4 @@
 <div *ngFor="let table of tables;">
     {{table}}
 </div>
+<div class="message-box" *ngIf="!tables.length">{{message}}</div>

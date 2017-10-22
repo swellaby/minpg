@@ -23,6 +23,11 @@ export class ServerConfigService {
     }
 
     public getServers(): ServerConfig[] {
-        return this.store.get('servers');
+        const servers = this.store.get('servers');
+        return (servers) ? servers : [];
+    }
+
+    public clearAll(): void {
+        this.store.delete('servers');
     }
 }
