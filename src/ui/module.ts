@@ -16,6 +16,7 @@ import { TableView } from './components/data-view/table-view/table-view';
 import { AddEditServer } from './components/modals/add-edit-server/add-edit-server';
 
 import { ServerSelectionService } from './services/sever-selection';
+import { DataProviderService } from './services/data-provider';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule.forRoot() ],
@@ -30,6 +31,9 @@ import { ServerSelectionService } from './services/sever-selection';
   ],
   bootstrap:    [ AppComponent ],
   entryComponents: [ AddEditServer ],
-  providers: [ ServerSelectionService ]
+  providers: [
+    DataProviderService,
+    ServerSelectionService
+  ]
 })
 export class AppModule { }

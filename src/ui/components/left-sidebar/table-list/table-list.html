@@ -1,4 +1,6 @@
-<div *ngFor="let table of tables;">
-    {{table}}
+<div class="tables">
+    <div class="table-row" *ngFor="let table of tables;" [ngClass]="{'selected': table.selected}">
+        <a (click)="setTable(table)">{{table.name}}</a>
+    </div>
 </div>
 <div class="message-box" *ngIf="!tables.length">{{message}}</div>

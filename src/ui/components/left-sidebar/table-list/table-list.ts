@@ -2,7 +2,9 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 import { PostgresClient } from '../../../../services/pg-client';
 import { ServerConfig } from '../../../../models/server-config';
+import { TableLink } from '../../../../models/table-link';
 import { ServerSelectionService } from '../../../services/sever-selection';
+import { DataProviderService } from '../../../services/data-provider';
 
 const noTablesMessage = 'No tables to display';
 
@@ -12,17 +14,28 @@ const noTablesMessage = 'No tables to display';
   styleUrls: ['ui/components/left-sidebar/table-list/table-list.css']
 })
 export class TableList implements OnInit {
-  public tables: String[] = [];
+  public tables: TableLink[] = [];
   public message: String = noTablesMessage;
 
   private serverConfig: ServerConfig;
   private pgClient: PostgresClient;
 
-  constructor(private selectionService: ServerSelectionService, private ref: ChangeDetectorRef) {}
+  constructor(private selectionService: ServerSelectionService, private dataService: DataProviderService, private ref: ChangeDetectorRef) {}
 
   public ngOnInit(): void {
     this.selectionService.currentServer.subscribe((val) => {
       this.updateServer(val);
+    });
+  }
+
+  public setTable(table: TableLink) {
+    this.tables.forEach((t) => {
+      t.selected = false;
+    });
+    table.selected = true;
+    this.pgClient.getTable(table.name).then((result) => {
+      this.dataService.updateData(table.name, result);
+      this.ref.detectChanges();
     });
   }
 
@@ -34,9 +47,12 @@ export class TableList implements OnInit {
 
   private loadTables() {
     this.pgClient.getAllTableNames().then((tables) => {
-      this.tables = tables;
+      this.tables = tables.map((table) => {
+        return { name: table, selected: false };
+      });
       this.message = noTablesMessage;
       this.ref.detectChanges();
+      this.pgClient.getAllDatabaseNames();
     }).catch((err) => {
       this.message = err;
     });
