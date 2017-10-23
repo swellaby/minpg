@@ -10,10 +10,9 @@
     "email": "texas312@gmail.com"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && node-sass src/ -o src/",
     "start": "electron .",
-    "lint": "tslint -c tslint.json ./**/*.ts",
-    "transpile": "tsc"
+    "lint": "tslint -c tslint.json ./**/*.ts"
   },
   "license": "ISC",
   "dependencies": {
@@ -41,6 +40,7 @@
     "@types/pg": "^7.1.4",
     "devtron": "^1.4.0",
     "electron-debug": "^1.4.0",
+    "node-sass": "^4.5.3",
     "tslint": "^5.7.0",
     "tslint-microsoft-contrib": "^5.0.1",
     "typescript": "^2.5.3"
